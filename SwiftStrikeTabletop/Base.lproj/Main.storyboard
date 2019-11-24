@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,28 +12,36 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="SwiftStrikeTabletop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="ARView" customClass="ARView" customModule="RealityKit">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWr-7F-gKY" customClass="GameActionButton" customModule="SwiftStrikeTabletop" customModuleProvider="target">
-                                <rect key="frame" x="131" y="448" width="338" height="128"/>
+                                <rect key="frame" x="38" y="710" width="338" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="338" id="Ocm-CK-gk7"/>
                                     <constraint firstAttribute="height" constant="128" id="Z1T-5d-H1N"/>
                                 </constraints>
                                 <state key="normal" image="TapToPlay">
-                                    <color key="titleColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="gameActionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jhH-F7-iv6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpp-DJ-eZA" userLabel="Game State Button">
+                                <rect key="frame" x="60" y="650" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Change It Up!"/>
+                                <connections>
+                                    <action selector="gameStateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y9r-g9-HIi"/>
+                                </connections>
+                            </button>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JN0-Ac-yk1" customClass="OverlayView" customModule="SwiftStrikeTabletop" customModuleProvider="target">
-                                <rect key="frame" x="137" y="236" width="326" height="128"/>
+                                <rect key="frame" x="44" y="384" width="326" height="128"/>
                                 <subviews>
                                     <view opaque="NO" alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejv-QO-dNI">
                                         <rect key="frame" x="0.0" y="0.0" width="326" height="128"/>
-                                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Level1" translatesAutoresizingMaskIntoConstraints="NO" id="yTI-SZ-nnW">
                                         <rect key="frame" x="0.0" y="0.0" width="326" height="128"/>
@@ -57,11 +65,11 @@
                                 </connections>
                             </view>
                             <imageView hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone-menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="6vR-gG-Cwn">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <variation key="heightClass=regular-widthClass=regular" image="iPad-menu.png"/>
                             </imageView>
                             <view opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcU-RA-K7q" customClass="ARCoachingOverlayView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -86,6 +94,7 @@
                         <outlet property="arView" destination="8bC-Xf-vdC" id="TPV-4x-avp"/>
                         <outlet property="coachingOverlay" destination="WcU-RA-K7q" id="mdA-mA-YKV"/>
                         <outlet property="gameActionButton" destination="FWr-7F-gKY" id="i5h-Dj-y3N"/>
+                        <outlet property="gameStateButton" destination="kpp-DJ-eZA" id="BUv-9P-BtM"/>
                         <outlet property="menuImageView" destination="6vR-gG-Cwn" id="Nh0-Wr-hcW"/>
                         <outlet property="overlayView" destination="JN0-Ac-yk1" id="Lae-gO-FMd"/>
                     </connections>

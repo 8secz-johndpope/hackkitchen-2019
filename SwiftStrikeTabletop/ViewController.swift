@@ -28,6 +28,9 @@ class ViewController: UIViewController {
     /// The app's main view.
     @IBOutlet var overlayView: OverlayView!
 
+    /// A button that changes game state
+    @IBOutlet weak var gameStateButton: UIButton!
+    
     /// The game controller, which manages game state.
     var gameController: Experience.GameController!
     
@@ -43,7 +46,14 @@ class ViewController: UIViewController {
     deinit {
         collisionEventStreams.removeAll()
     }
+    
+    @IBAction func gameStateButtonPressed(_ sender: Any) {
+        gameActionButton.isHidden = true
+        gameActionButton.gameAction = .retry
 
+        gameController.advancePlayerLevel()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
